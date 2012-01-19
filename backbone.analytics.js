@@ -20,7 +20,9 @@
         this.iframe.location.hash = frag;
       }
     }
-    _gaq.push(['_trackPageview', '/' + fragment]);
+    if (window._gaq !== undefined && fragment.length > 0) {
+      window._gaq.push(['_trackPageview', '/' + fragment]);
+    }
     if (triggerRoute) this.loadUrl(fragment);
   };
 }).call(this);

@@ -12,6 +12,14 @@ A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's 
 
 Add the [asynchronous Google Analytics code](http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html) to your site.
 
+**NOTE**: Depending on your routes, you may want to remove this line from Google's Code:
+
+```
+_gaq.push(['_trackPageView']);
+```
+
+Removing this line will prevent double counting if you load your page, and then call Backbone's route right afterwards.
+
 Add these dependencies to site's `<head>`, **in order**:
 
 ```
