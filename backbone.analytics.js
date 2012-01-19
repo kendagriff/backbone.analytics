@@ -5,7 +5,7 @@
 (function() {
   var hashStrip = /^#*/;
 
-  Backbone.Router.prototype.navigate = function(fragment, triggerRoute) {
+  Backbone.History.prototype.navigate = function(fragment, triggerRoute) {
     var frag = (fragment || '').replace(hashStrip, '');
     if (this.fragment == frag || this.fragment == decodeURIComponent(frag)) return;
     if (this._hasPushState) {
@@ -20,9 +20,7 @@
         this.iframe.location.hash = frag;
       }
     }
-    if (window._gaq !== undefined && fragment.length > 0) {
-      window._gaq.push(['_trackPageview', '/' + fragment]);
-    }
+    if (window._gaq !== undefined) window._gaq.push(['_trackPageview', '/' + fragment]);
     if (triggerRoute) this.loadUrl(fragment);
   };
 }).call(this);

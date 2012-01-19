@@ -1,6 +1,6 @@
 # Backbone.Analytics
 
-A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's `navigate` function.
+A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's `navigate` function. Works best with `pushState` set to `true`. If `pushState` is turned off, it's possible Google will register visits twice on page load. You can mitigate that by removing the `trackEvent` from the Google code in your site.
 
 ### Dependencies
 
@@ -12,15 +12,9 @@ A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's 
 
 Add the [asynchronous Google Analytics code](http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html) to your site.
 
-**NOTE**: Depending on your routes, you may want to remove this line from Google's Code:
-
-```
-_gaq.push(['_trackPageView']);
-```
-
 Removing this line will prevent double counting if you load your page, and then call Backbone's route right afterwards.
 
-Add these dependencies to site's `<head>`, **in order**:
+Add these dependencies to your site's `<head>`, **in order**:
 
 ```
 <script src="jquery.js"></script>
