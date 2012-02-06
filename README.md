@@ -12,7 +12,8 @@ A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's 
 
 Add the [asynchronous Google Analytics code](http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html) to your site.
 
-Removing this line will prevent double counting if you load your page, and then call Backbone's route right afterwards.
+If you run `Backbone.history.start()` with the `silent: false` option (it's the default) then you may want to remove the following line from your tracking snippet to prevent Google from possibly double counting the initial page load.
+`_gaq.push(['_trackPageview']);`
 
 Add these dependencies to your site's `<head>`, **in order**:
 
