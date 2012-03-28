@@ -1,26 +1,23 @@
 // Created by Kendall Buchanan, (https://github.com/kendagriff)
+// Modified by Paul English, (https://github.com/nrub)
 // MIT licence
-// Version 0.0.1
+// Version 0.0.2
 
 (function() {
-  var hashStrip = /^#*/;
 
-  Backbone.History.prototype.navigate = function(fragment, triggerRoute) {
-    var frag = (fragment || '').replace(hashStrip, '');
-    if (this.fragment == frag || this.fragment == decodeURIComponent(frag)) return;
-    if (this._hasPushState) {
-      var loc = window.location;
-      if (frag.indexOf(this.options.root) != 0) frag = this.options.root + frag;
-      this.fragment = frag;
-      window.history.pushState({}, document.title, loc.protocol + '//' + loc.host + frag);
-    } else {
-      window.location.hash = this.fragment = frag;
-      if (this.iframe && (frag != this.getFragment(this.iframe.location.hash))) {
-        this.iframe.document.open().close();
-        this.iframe.location.hash = frag;
+  Backbone.History.prototype.loadUrl = function(fragmentOverride) {
+    var fragment = this.fragment = this.getFragment(fragmentOverride);
+    var matched = _.any(this.handlers, function(handler) {
+      if (handler.route.test(fragment)) {
+        handler.callback(fragment);
+        return true;
       }
-    }
-    if (window._gaq !== undefined) window._gaq.push(['_trackPageview', '/' + fragment]);
-    if (triggerRoute) this.loadUrl(fragment);
+    });
+
+    if (!/^\//.test(fragment)) fragment = '/' + fragment;
+    if (window._gaq !== undefined) window._gaq.push(['_trackPageview', fragment]);
+
+    return matched;
   };
+
 }).call(this);
