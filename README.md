@@ -25,27 +25,27 @@ Add these dependencies to your site's `<head>`, **in order**:
 ```
 
 ## Usage
+Anywhere you call your routers navigate method with the trigger option set to true Backbone.Analytics will call '_gaq.push(['_trackPageview', '/some-page'])' after completing the Backbone route. This pushes the route to the Google Analytics tracking queue. Once this queue is processed by the Google Analytics script your urls will be tracked to the Google Analytics server.
 
-In each function for each of your Backbone routes, simply call the `navigate` function as you normally would. Backbone.Analytics will call `_gaq.push(['_trackPageview', '/some-page'])` after completing the Backbone route.
-
-```
+```javascript
 var TestRouter = Backbone.Router.extend({
   routes: {
     'some-page': 'somePage'
   },
 
   somePage: function() {
-    this.navigate('some-page');
+    // Perform your route based logic, e.g. Replace the current view with a different one.
     return false;
   }
 });
 
 var router = new TestRouter();
 Backbone.history.start();
-
-router.somePage();
-
-// The alternative might be...
-
-router.navigate('some-page', true);
 ```
+
+Somewhere else in your application, change the view by doing:
+```javascript
+router.navigate('some-page', { trigger: true });
+```
+
+Anywhere in your application where you want to update the URL but do **not** trigger the associated route, you will still need to manually track the action.
