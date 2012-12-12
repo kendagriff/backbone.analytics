@@ -49,3 +49,9 @@ router.navigate('some-page', { trigger: true });
 ```
 
 Anywhere in your application where you want to update the URL but do **not** trigger the associated route, you will still need to manually track the action.
+
+## Contributors
+
+* [WillsB3](https://github.com/WillsB3)
+* [Paul English](https://github.com/nrub)
+* [Kendall Buchanan](https://github.com/kendagriff)
