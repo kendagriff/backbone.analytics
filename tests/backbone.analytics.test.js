@@ -4,7 +4,7 @@ var TestRouter = Backbone.Router.extend({
   },
 
   somePage: function() {
-    this.navigate('some-page');
+    // Pretend we are doing something
     return false;
   }
 });
@@ -21,10 +21,16 @@ $(document).ready(function() {
 
   // Tests
   test("Visit URL, trigger Google's trackEvent", function() {
-    this.router.somePage();
+    // Check that the initial route was tracked
     equal(_gaq.length, 1);
     equal(_gaq[0][0], '_trackPageview');
-    equal(_gaq[0][1], '/some-page');
+    equal(_gaq[0][1], '/');
+
+    // Check that calling a route works
+    this.router.navigate('some-page', { trigger: true });
+    equal(_gaq.length, 2);
+    equal(_gaq[1][0], '_trackPageview');
+    equal(_gaq[1][1], '/some-page');
   });
 
 });
