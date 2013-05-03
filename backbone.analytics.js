@@ -1,8 +1,3 @@
-// Created by Kendall Buchanan, (https://github.com/kendagriff)
-// Modified by Paul English, (https://github.com/nrub)
-// MIT licence
-// Version 0.0.2
-
 (function() {
   var _loadUrl = Backbone.History.prototype.loadUrl;
 
