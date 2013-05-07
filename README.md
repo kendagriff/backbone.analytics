@@ -5,7 +5,7 @@ A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's 
 ### Dependencies
 
 * [JQuery](http://jquery.com/)
-* [Backbone.js](http://documentcloud.github.com/backbone/) (Tested in 0.5.3)
+* [Backbone.js](http://documentcloud.github.com/backbone/) (Tested in 1.0)
 * [Underscore.js](http://documentcloud.github.com/underscore/) (Tested in 1.2.3)
 
 ## Setup
