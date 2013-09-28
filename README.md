@@ -53,3 +53,5 @@ Anywhere in your application where you want to update the URL but do **not** tri
 * [WillsB3](https://github.com/WillsB3)
 * [Paul English](https://github.com/nrub)
 * [Kendall Buchanan](https://github.com/kendagriff)
+* [Makis Tracend](https://github.com/tracend)
+
