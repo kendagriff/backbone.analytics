@@ -1,4 +1,12 @@
-(function() {
+(function(factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(['backbone'], factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory(require('backbone'));
+  } else {
+    factory(window.Backbone);
+  }
+})(function(Backbone) {
   var loadUrl = Backbone.History.prototype.loadUrl;
 
   Backbone.History.prototype.loadUrl = function(fragmentOverride) {
@@ -13,4 +21,4 @@
     return matched;
   };
 
-}).call(this);
+});
