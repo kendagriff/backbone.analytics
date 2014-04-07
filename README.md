@@ -7,7 +7,7 @@ A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's 
 * [Backbone.js](http://documentcloud.github.com/backbone/) (Tested in 1.0)
 * [Underscore.js](http://documentcloud.github.com/underscore/) (Tested in 1.2.3)
 
-## Setup
+## Traditional Install
 
 Add the [asynchronous Google Analytics code](http://code.google.com/apis/analytics/docs/tracking/asyncTracking.html) to your site.
 
@@ -20,6 +20,12 @@ Add these dependencies to your site's `<head>`, **in order**:
 <script src="underscore.js"></script>
 <script src="backbone.js"></script>
 <script src="backbone.analytics.js"></script>
+```
+
+## NPM Install
+
+```
+npm install backbone.analytics
 ```
 
 ## Usage
@@ -47,11 +53,3 @@ router.navigate('some-page', { trigger: true });
 ```
 
 Anywhere in your application where you want to update the URL but do **not** trigger the associated route, you will still need to manually track the action.
-
-## Contributors
-
-* [WillsB3](https://github.com/WillsB3)
-* [Paul English](https://github.com/nrub)
-* [Kendall Buchanan](https://github.com/kendagriff)
-* [Makis Tracend](https://github.com/tracend)
-
