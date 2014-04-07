@@ -1,6 +1,6 @@
 {
   "name": "backbone.analytics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's `navigate` function.",
   "keywords": [
     "backbone",
@@ -49,9 +49,6 @@
       "url": "https://github.com/kendagriff/backbone.analytics/blob/master/LICENSE"
     }
   ],
-  "dependencies": {
-    "backbone": "~1.0.0"
-  },
   "devDependencies": {
     "backbone": "~1.0.0"
   }
