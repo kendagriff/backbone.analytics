@@ -1,6 +1,6 @@
 {
   "name": "backbone.analytics",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's `navigate` function.",
   "keywords": [
     "backbone",
