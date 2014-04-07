@@ -48,5 +48,11 @@
       "type": "MIT",
       "url": "https://github.com/kendagriff/backbone.analytics/blob/master/LICENSE"
     }
-  ]
+  ],
+  "dependencies": {
+    "backbone": "~1.0.0"
+  },
+  "devDependencies": {
+    "backbone": "~1.0.0"
+  }
 }
