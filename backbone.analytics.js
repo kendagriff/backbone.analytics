@@ -16,7 +16,7 @@
     if(typeof window._gaq !== "undefined") window._gaq.push(['_trackPageview', gaFragment]);
     if(typeof window['GoogleAnalyticsObject'] !== "undefined"){
       var ga = window['GoogleAnalyticsObject'];
-      window[ga]('send', 'pageview', gaFragment);
+      ga('send', 'pageview', gaFragment);
     }
     return matched;
   };
