@@ -13,9 +13,11 @@
     var matched = loadUrl.apply(this, arguments),
         gaFragment = this.fragment;
     if (!/^\//.test(gaFragment)) gaFragment = '/' + gaFragment;
+    // legacy version
     if(typeof window._gaq !== "undefined") window._gaq.push(['_trackPageview', gaFragment]);
-    if(typeof window['GoogleAnalyticsObject'] !== "undefined"){
-      var ga = window['GoogleAnalyticsObject'];
+    // Analytics.js
+    var ga = window['GoogleAnalyticsObject'] || window.ga;
+    if(typeof ga !== "undefined"){
       ga('send', 'pageview', gaFragment);
     }
     return matched;
