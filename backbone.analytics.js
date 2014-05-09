@@ -29,7 +29,13 @@
     }
 
     // Analytics.js
-    var ga = window.GoogleAnalyticsObject || window.ga;
+    var ga;
+    if (window.GoogleAnalyticsObject && window.GoogleAnalyticsObject !== 'ga') {
+      ga = window.GoogleAnalyticsObject;
+    } else {
+      ga = window.ga;
+    }
+
     if (typeof ga !== 'undefined') {
       ga('send', 'pageview', gaFragment);
     }
