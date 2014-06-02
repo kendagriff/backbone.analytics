@@ -5,7 +5,6 @@ A drop-in plugin that integrates Google's `trackEvent` directly into Backbone's 
 ### Dependencies
 
 * [Backbone.js](http://documentcloud.github.com/backbone/) (Tested in 1.0)
-* [Underscore.js](http://documentcloud.github.com/underscore/) (Tested in 1.2.3)
 
 ## Traditional Install
 
@@ -29,7 +28,7 @@ npm install backbone.analytics --save
 ```
 
 ## Usage
-Anywhere you call your routers navigate method with the trigger option set to true Backbone.Analytics will call '_gaq.push(['_trackPageview', '/some-page'])' after completing the Backbone route. This pushes the route to the Google Analytics tracking queue. Once this queue is processed by the Google Analytics script your urls will be tracked to the Google Analytics server.
+Anywhere you call your router's navigate method with the trigger option set to true Backbone.Analytics will call `_gaq.push(['_trackPageview', '/some-page'])` after completing the Backbone route. This pushes the route to the Google Analytics tracking queue. Once this queue is processed by the Google Analytics script your urls will be tracked to the Google Analytics server.
 
 ```javascript
 var TestRouter = Backbone.Router.extend({
