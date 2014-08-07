@@ -19,6 +19,11 @@
     var matched = loadUrl.apply(this, arguments),
         gaFragment = this.fragment;
 
+    if (!this.options.silent) {
+      this.options.silent = true;
+      return matched;
+    }
+    
     if (!/^\//.test(gaFragment)) {
       gaFragment = '/' + gaFragment;
     }
