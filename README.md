@@ -20,6 +20,8 @@ Add these dependencies to your site's `<head>`, **in order**:
 
 ## NPM Install
 
+Install [NPM module](https://www.npmjs.com/package/backbone.analytics): 
+  
 ```
 npm install backbone.analytics --save
 ```
