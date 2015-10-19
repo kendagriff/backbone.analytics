@@ -42,7 +42,7 @@
     }
 
     if (typeof ga !== 'undefined') {
-      ga('set', page: gaFragment);
+      ga('set', 'page', gaFragment);
       ga('send', 'pageview');
     }
     return matched;
