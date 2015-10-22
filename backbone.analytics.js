@@ -36,7 +36,7 @@
     // Analytics.js
     var ga;
     if (window.GoogleAnalyticsObject && window.GoogleAnalyticsObject !== 'ga') {
-      ga = window.GoogleAnalyticsObject;
+      ga = window[GoogleAnalyticsObject];
     } else {
       ga = window.ga;
     }
